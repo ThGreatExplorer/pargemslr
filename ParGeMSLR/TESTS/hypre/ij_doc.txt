@@ -1,0 +1,328 @@
+
+Usage: ./ij [<options>]
+
+  -gemslrfile <filename>     : read gemslr setup from file (default is ./inputs)
+  -fromfile <filename>       : matrix read from multiple files (IJ format)
+  -fromparcsrfile <filename> : matrix read from multiple files (ParCSR format)
+  -fromonecsrfile <filename> : matrix read from a single file (CSR format)
+
+  -laplacian [<options>] : build 5pt 2D laplacian problem (default) 
+  -sysL <num functions>  : build SYSTEMS laplacian 7pt operator
+  -9pt [<opts>]          : build 9pt 2D laplacian problem
+  -27pt [<opts>]         : build 27pt 3D laplacian problem
+  -difconv [<opts>]      : build convection-diffusion problem
+    -n <nx> <ny> <nz>    : total problem size 
+    -P <Px> <Py> <Pz>    : processor topology
+    -c <cx> <cy> <cz>    : diffusion coefficients
+    -a <ax> <ay> <az>    : convection coefficients
+    -atype <type>        : FD scheme for convection 
+           0=Forward (default)       1=Backward
+           2=Centered                3=Upwind
+
+  -exact_size            : inserts immediately into ParCSR structure
+  -storage_low           : allocates not enough storage for aux struct
+  -concrete_parcsr       : use parcsr matrix type as concrete type
+
+  -rhsfromfile           : rhs read from multiple files (IJ format)
+  -rhsfromonefile        : rhs read from a single file (CSR format)
+  -rhsparcsrfile        :  rhs read from multiple files (ParCSR format)
+  -Ffromonefile          : list of F points from a single file
+  -SFfromonefile          : list of isolated F points from a single file
+  -rhsrand               : rhs is random vector
+  -rhsisone              : rhs is vector with unit components (default)
+  -xisone                : solution of all ones
+  -rhszero               : rhs is zero vector
+
+  -dt <val>              : specify finite backward Euler time step
+                         :    -rhsfromfile, -rhsfromonefile, -rhsrand,
+                         :    -rhsrand, or -xisone will be ignored
+  -srcfromfile           : backward Euler source read from multiple files (IJ format)
+  -srcfromonefile        : backward Euler source read from a single file (IJ format)
+  -srcrand               : backward Euler source is random vector with components in range 0 - 1
+  -srcisone              : backward Euler source is vector with unit components (default)
+  -srczero               : backward Euler source is zero-vector
+  -x0fromfile           : initial guess x0 read from multiple files (IJ format)
+
+  -solver <ID>           : solver ID
+       0=AMG               1=AMG-PCG        
+       2=DS-PCG            3=AMG-GMRES      
+       4=DS-GMRES          5=AMG-CGNR       
+       6=DS-CGNR           7=PILUT-GMRES    
+       8=ParaSails-PCG     9=AMG-BiCGSTAB   
+       10=DS-BiCGSTAB     11=PILUT-BiCGSTAB 
+       12=Schwarz-PCG     13=GSMG           
+       14=GSMG-PCG        15=GSMG-GMRES
+       16=AMG-COGMRES     17=DIAG-COGMRES
+       18=ParaSails-GMRES
+       20=Hybrid solver/ DiagScale, AMG 
+       43=Euclid-PCG      44=Euclid-GMRES   
+       45=Euclid-BICGSTAB 46=Euclid-COGMRES
+       47=Euclid-FlexGMRES
+       50=DS-LGMRES       51=AMG-LGMRES     
+       60=DS-FlexGMRES    61=AMG-FlexGMRES  
+       70=MGR             71=MGR-PCG  
+       72=MGR-FlexGMRES   73=MGR-BICGSTAB  
+       74=MGR-COGMRES  
+       80=ILU      81=ILU-GMRES  
+       82=ILU-FlexGMRES  
+       83=GEMSLR-FlexGMRES  
+       90=AMG-DD          91=AMG-DD-GMRES  
+
+  -cljp                 : CLJP coarsening 
+  -cljp1                : CLJP coarsening, fixed random 
+  -cgc                  : CGC coarsening 
+  -cgce                 : CGC-E coarsening 
+  -pmis                 : PMIS coarsening 
+  -pmis1                : PMIS coarsening, fixed random 
+  -hmis                 : HMIS coarsening (default)
+  -ruge                 : Ruge-Stueben coarsening (local)
+  -ruge1p               : Ruge-Stueben coarsening 1st pass only(local)
+  -ruge3                : third pass on boundary
+  -ruge3c               : third pass on boundary, keep c-points
+  -falgout              : local Ruge_Stueben followed by CLJP
+  -gm                   : use global measures
+
+  -interptype  <val>    : set interpolation type
+       0=Classical modified interpolation  
+       1=least squares interpolation (for GSMG only)  
+       0=Classical modified interpolation for hyperbolic PDEs 
+       3=direct interpolation with separation of weights  
+       15=direct interpolation
+       4=multipass interpolation  
+       5=multipass interpolation with separation of weights  
+       6=extended classical modified interpolation (default) 
+       7=extended (only if no common C neighbor) interpolation  
+       8=standard interpolation  
+       9=standard interpolation with separation of weights  
+      12=FF interpolation  
+      13=FF1 interpolation  
+      16=use modified unknown interpolation for a system (w/unknown or hybrid approach) 
+      17=use non-systems interp = 6 for a system (w/unknown or hybrid approach) 
+      18=use non-systems interp = 8 for a system (w/unknown or hybrid approach) 
+      19=use non-systems interp = 0 for a system (w/unknown or hybrid approach) 
+      10=classical block interpolation for nodal systems AMG
+      11=classical block interpolation with diagonal blocks for nodal systems AMG
+      20=same as 10, but don't add weak connect. to diag 
+      21=same as 11, but don't add weak connect. to diag 
+      22=classical block interpolation w/Ruge's variant for nodal systems AMG 
+      23=same as 22, but use row sums for diag scaling matrices,for nodal systems AMG 
+      24=direct block interpolation for nodal systems AMG
+     100=One point interpolation [a Boolean matrix]
+
+  -restritype  <val>    : set restriction type
+       0=transpose of the interpolation  
+       k=local approximate ideal restriction (AIR-k)  
+
+  -rlx  <val>            : relaxation type
+       0=Weighted Jacobi  
+       1=Gauss-Seidel (very slow!)  
+       3=Hybrid Gauss-Seidel  
+       4=Hybrid backward Gauss-Seidel  
+       6=Hybrid symmetric Gauss-Seidel  
+       8= symmetric L1-Gauss-Seidel  
+       13= forward L1-Gauss-Seidel  
+       14= backward L1-Gauss-Seidel  
+       15=CG  
+       16=Chebyshev  
+       17=FCF-Jacobi  
+       18=L1-Jacobi (may be used with -CF) 
+       9=Gauss elimination (use for coarsest grid only)  
+       99=Gauss elimination with pivoting (use for coarsest grid only)  
+       20= Nodal Weighted Jacobi (for systems only) 
+       23= Nodal Hybrid Jacobi/Gauss-Seidel (for systems only) 
+       26= Nodal Hybrid Symmetric Gauss-Seidel  (for systems only)
+       29= Nodal Gauss elimination (use for coarsest grid only)  
+  -rlx_coarse  <val>       : set relaxation type for coarsest grid
+  -rlx_down    <val>       : set relaxation type for down cycle
+  -rlx_up      <val>       : set relaxation type for up cycle
+  -cheby_order  <val> : set order (1-4) for Chebyshev poly. smoother (default is 2)
+  -cheby_fraction <val> : fraction of the spectrum for Chebyshev poly. smoother (default is .3)
+  -nodal  <val>            : nodal system type
+       0 = Unknown approach 
+       1 = Frobenius norm  
+       2 = Sum of Abs.value of elements  
+       3 = Largest magnitude element (includes its sign)  
+       4 = Inf. norm  
+       5 = One norm  (note: use with block version only) 
+       6 = Sum of all elements in block  
+  -nodal_diag <val>        :how to treat diag elements
+       0 = no special treatment 
+       1 = make diag = neg.sum of the off_diag  
+       2 = make diag = neg. of diag 
+  -ns <val>              : Use <val> sweeps on each level
+                           (default C/F down, F/C up, F/C fine
+  -ns_coarse  <val>       : set no. of sweeps for coarsest grid
+  -ns_down    <val>       : set no. of sweeps for down cycle
+  -ns_up      <val>       : set no. of sweeps for up cycle
+
+  -mu   <val>            : set AMG cycles (1=V, 2=W, etc.)
+  -cutf <val>            : set coarsening cut factor for dense rows
+  -th   <val>            : set AMG threshold Theta = val 
+  -tr   <val>            : set AMG interpolation truncation factor = val 
+  -Pmx  <val>            : set maximal no. of elmts per row for AMG interpolation (default: 4)
+  -jtr  <val>            : set truncation threshold for Jacobi interpolation = val 
+  -Ssw  <val>            : set S-commpkg-switch = val 
+  -mxrs <val>            : set AMG maximum row sum threshold for dependency weakening 
+  -nf <val>              : set number of functions for systems AMG
+  -numsamp <val>         : set number of sample vectors for GSMG
+  -postinterptype <val>  : invokes <val> no. of Jacobi interpolation steps after main interpolation
+
+  -cgcitr <val>          : set maximal number of coarsening iterations for CGC
+  -solver_type <val>     : sets solver within Hybrid solver
+                         : 1  PCG  (default)
+                         : 2  GMRES
+                         : 3  BiCGSTAB
+  -w   <val>             : set Jacobi relax weight = val
+  -k   <val>             : dimension Krylov space for GMRES
+  -aug   <val>           : number of augmentation vectors for LGMRES (-k indicates total approx space size)
+  -mxl  <val>            : maximum number of levels (AMG, ParaSAILS)
+  -tol  <val>            : set solver convergence tolerance = val
+  -atol  <val>           : set solver absolute convergence tolerance = val
+  -max_iter  <val>       : set max iterations
+  -mg_max_iter  <val>    : set max iterations for mg solvers
+  -agg_nl  <val>         : set number of aggressive coarsening levels (default:0)
+  -np  <val>             : set number of paths of length 2 for aggr. coarsening
+
+  -sai_th   <val>        : set ParaSAILS threshold = val 
+  -sai_filt <val>        : set ParaSAILS filter = val 
+
+  -level   <val>         : set k in ILU(k) for Euclid 
+  -bj <val>              : enable block Jacobi ILU for Euclid 
+  -ilut <val>            : set drop tolerance for ILUT in Euclid
+                           Note ILUT is sequential only!
+  -sparseA <val>         : set drop tolerance in ILU(k) for Euclid 
+  -rowScale <val>        : enable row scaling in Euclid 
+
+  -drop_tol  <val>       : set threshold for dropping in PILUT
+  -nonzeros_to_keep <val>: number of nonzeros in each row to keep
+
+  -iout <val>            : set output flag
+       0=no output    1=matrix stats
+       2=cycle stats  3=matrix & cycle stats
+
+  -dbg <val>             : set debug flag
+       0=no debugging
+       1=internal timing
+       2=interpolation truncation
+       3=more detailed timing in coarsening routine
+
+  -print                 : print out the system
+
+LOBPCG options:
+
+  -lobpcg                 : run LOBPCG instead of PCG
+
+  -gen                    : solve generalized EVP with B = Laplacian
+
+  -con                    : solve constrained EVP using 'vectors.*.*'
+                            as constraints (see -vout 1 below)
+
+  -solver none            : no HYPRE preconditioner is used
+
+  -itr <val>              : maximal number of LOBPCG iterations
+                            (default 100);
+
+  -vrand <val>            : compute <val> eigenpairs using random
+                            initial vectors (default 1)
+
+  -seed <val>             : use <val> as the seed for the random
+                            number generator(default seed is based
+                            on the time of the run)
+
+  -vfromfile              : read initial vectors from files
+                            vectors.i.j where i is vector number
+                            and j is processor number
+
+  -orthchk                : check eigenvectors for orthonormality
+
+  -verb <val>             : verbosity level
+  -verb 0                 : no print
+  -verb 1                 : print initial eigenvalues and residuals,
+                            the iteration number, the number of
+                            non-convergent eigenpairs and final
+                            eigenvalues and residuals (default)
+  -verb 2                 : print eigenvalues and residuals on each
+                            iteration
+
+  -pcgitr <val>           : maximal number of inner PCG iterations
+                            for preconditioning (default 1);
+                            if <val> = 0 then the preconditioner
+                            is applied directly
+
+  -pcgtol <val>           : residual tolerance for inner iterations
+                            (default 0.01)
+
+  -vout <val>             : file output level
+  -vout 0                 : no files created (default)
+  -vout 1                 : write eigenvalues to values.txt, residuals
+                            to residuals.txt and eigenvectors to 
+                            vectors.i.j where i is vector number
+                            and j is processor number
+  -vout 2                 : in addition to the above, write the
+                            eigenvalues history (the matrix whose
+                            i-th column contains eigenvalues at
+                            (i+1)-th iteration) to val_hist.txt and
+                            residuals history to res_hist.txt
+
+NOTE: in this test driver LOBPCG only works with solvers 1, 2, 8, 12, 14 and 43
+
+default solver is 1
+
+  -plot_grids            : print out information for plotting the grids
+  -plot_file_name <val>  : file name for plotting output
+
+  -smtype <val>      :smooth type
+  -smlv <val>        :smooth num levels
+  -ov <val>          :over lap:
+  -dom <val>         :domain type
+  -use_ns            : use non-symm schwarz smoother
+  -var <val>         : schwarz smoother variant (0-3) 
+  -blk_sm <val>      : same as '-smtype 6 -ov 0 -dom 1 -smlv <val>'
+  -nongalerk_tol <val> <list>    : specify the NonGalerkin drop tolerance
+                                   and list contains the values, where last value
+                                   in list is repeated if val < num_levels in AMG
+  -mgr_bsize   <val>               : set block size = val
+  -mgr_nlevels   <val>             : set number of coarsening levels = val
+  -mgr_num_reserved_nodes   <val>  : set number of reserved nodes 
+                                     to be kept till the coarsest grid = val
+  -mgr_non_c_to_f   <val>          : set strategy for intermediate coarse grid 
+  -mgr_non_c_to_f   0              : Allow some non Cpoints to be labeled 
+                                     Cpoints on intermediate grid 
+  -mgr_non_c_to_f   1              : set non Cpoints strictly to Fpoints 
+  -mgr_frelax_method   <val>       : set F-relaxation strategy 
+  -mgr_frelax_method   0           : Use 'single-level smoother' strategy 
+                                     for F-relaxation 
+  -mgr_frelax_method   1           : Use a 'multi-level smoother' strategy 
+                                     for F-relaxation 
+  -ilu_type   <val>                : set ILU factorization type = val
+  -ilu_type   0                    : Block Jacobi with ILU(k) variants 
+  -ilu_type   1                    : Block Jacobi with ILUT 
+  -ilu_type   10                   : GMRES with ILU(k) variants 
+  -ilu_type   11                   : GMRES with ILUT 
+  -ilu_type   20                   : NSH with ILU(k) variants 
+  -ilu_type   21                   : NSH with ILUT 
+  -ilu_type   30                   : RAS with ILU(k) variants 
+  -ilu_type   31                   : RAS with ILUT 
+  -ilu_type   40                   : ddPQ + GMRES with ILU(k) variants 
+  -ilu_type   41                   : ddPQ + GMRES with ILUT 
+  -ilu_type   50                   : GMRES with ILU(0): RAP variant with MILU(0)  
+  -ilu_lfil   <val>                : set level of fill (k) for ILU(k) = val
+  -ilu_droptol   <val>             : set drop tolerance threshold for ILUT = val 
+  -ilu_max_row_nnz   <val>         : set max. num of nonzeros to keep per row = val 
+  -ilu_schur_max_iter   <val>      : set max. num of iteration for GMRES/NSH Schur = val 
+  -ilu_nsh_droptol   <val>         : set drop tolerance threshold for NSH = val 
+  -ilu_sm_max_iter   <val>         : set number of iterations when applied as a smmother in AMG = val 
+  -amgdd_start_level   <val>       : set AMG-DD start level = val
+  -amgdd_padding   <val>           : set AMG-DD padding = val
+  -amgdd_num_ghost_layers   <val>  : set AMG-DD number of ghost layers = val
+  -amgdd_fac_num_relax   <val>     : set AMG-DD FAC cycle number of pre/post-relaxations = val
+  -amgdd_num_comp_cycles   <val>   : set AMG-DD number of inner FAC cycles = val
+  -amgdd_fac_relax_type   <val>    : set AMG-DD FAC relaxation type = val
+       0=Weighted Jacobi  
+       1=Gauss-Seidel  
+       2=Ordered Gauss-Seidel  
+       3=CFL1 Jacobi  
+  -amgdd_fac_cycle_type   <val>    : set AMG-DD FAC cycle type = val
+       1=V-cycle  
+       2=W-cycle  
+       3=F-cycle  

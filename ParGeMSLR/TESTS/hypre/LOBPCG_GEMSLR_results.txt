@@ -1,0 +1,522 @@
+
+Using HYPRE_DEVELOP_STRING: v2.31.0-9-g0dcae3ec7 (main development branch master)
+
+Running with these driver parameters:
+  solver ID    = 83
+
+=============================================
+Hypre init times:
+=============================================
+Hypre init:
+  wall clock time = 0.000008 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.000008 seconds
+  cpu MFLOPS      = 0.000000
+
+  Laplacian:   num_fun = 1
+    (nx, ny, nz) = (32, 32, 32)
+    (Px, Py, Pz) = (1, 1, 1)
+    (cx, cy, cz) = (1.000000, 1.000000, 1.000000)
+
+=============================================
+Generate Matrix:
+=============================================
+Spatial Operator:
+  wall clock time = 0.002632 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.002633 seconds
+  cpu MFLOPS      = 0.000000
+
+  RHS vector has unit components
+  Initial guess is 0
+=============================================
+IJ Vector Setup:
+=============================================
+RHS and Initial Guess:
+  wall clock time = 0.001717 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.001236 seconds
+  cpu MFLOPS      = 0.000000
+
+Solver ID not recognized - running LOBPCG without preconditioner
+
+HYPRE_ParCSRLOBPCGGetPrecond got good precond
+=============================================
+Setup phase times:
+=============================================
+LOBPCG Setup:
+  wall clock time = 0.000005 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.000005 seconds
+  cpu MFLOPS      = 0.000000
+
+
+Solving standard eigenvalue problem without preconditioning
+
+block size 1
+
+No constraints
+
+
+Initial Max. Residual   2.41805016376820e+00
+Iteration 1 	bsize 1 	maxres   2.09303215000607e+00
+Iteration 2 	bsize 1 	maxres   1.67442436253688e+00
+Iteration 3 	bsize 1 	maxres   1.24417973257053e+00
+Iteration 4 	bsize 1 	maxres   9.54202820390438e-01
+Iteration 5 	bsize 1 	maxres   7.56083620876854e-01
+
+Using HYPRE_DEVELOP_STRING: v2.31.0-9-g0dcae3ec7 (main development branch master)
+
+Running with these driver parameters:
+  solver ID    = 83
+
+=============================================
+Hypre init times:
+=============================================
+Hypre init:
+  wall clock time = 0.000004 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.000004 seconds
+  cpu MFLOPS      = 0.000000
+
+  Laplacian:   num_fun = 1
+    (nx, ny, nz) = (32, 32, 32)
+    (Px, Py, Pz) = (1, 1, 1)
+    (cx, cy, cz) = (1.000000, 1.000000, 1.000000)
+
+Iteration 6 	bsize 1 	maxres   6.20940559691230e-01
+=============================================
+Generate Matrix:
+=============================================
+Spatial Operator:
+  wall clock time = 0.001803 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.001771 seconds
+  cpu MFLOPS      = 0.000000
+
+  RHS vector has unit components
+  Initial guess is 0
+=============================================
+IJ Vector Setup:
+=============================================
+RHS and Initial Guess:
+  wall clock time = 0.000704 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.000706 seconds
+  cpu MFLOPS      = 0.000000
+
+Solver ID not recognized - running LOBPCG without preconditioner
+
+HYPRE_ParCSRLOBPCGGetPrecond got good precond
+=============================================
+Setup phase times:
+=============================================
+LOBPCG Setup:
+  wall clock time = 0.000005 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.000005 seconds
+  cpu MFLOPS      = 0.000000
+
+
+Solving standard eigenvalue problem without preconditioning
+
+block size 1
+
+No constraints
+
+Iteration 7 	bsize 1 	maxres   5.27035339183745e-01
+
+Initial Max. Residual   2.41805016376820e+00
+Iteration 8 	bsize 1 	maxres   4.51176228214413e-01
+Iteration 1 	bsize 1 	maxres   2.09303215000607e+00
+Iteration 9 	bsize 1 	maxres   3.87564281790274e-01
+Iteration 2 	bsize 1 	maxres   1.67442436253688e+00
+Iteration 10 	bsize 1 	maxres   3.35010611459731e-01
+Iteration 3 	bsize 1 	maxres   1.24417973257053e+00
+Iteration 11 	bsize 1 	maxres   2.91617523409640e-01
+Iteration 12 	bsize 1 	maxres   2.55512077072922e-01
+Iteration 4 	bsize 1 	maxres   9.54202820390438e-01
+Iteration 13 	bsize 1 	maxres   2.24146491094688e-01
+Iteration 5 	bsize 1 	maxres   7.56083620876854e-01
+Iteration 14 	bsize 1 	maxres   1.99825909059365e-01
+Iteration 15 	bsize 1 	maxres   1.82908639664664e-01
+Iteration 6 	bsize 1 	maxres   6.20940559691230e-01
+Iteration 16 	bsize 1 	maxres   1.72440171444126e-01
+Iteration 7 	bsize 1 	maxres   5.27035339183745e-01
+Iteration 8 	bsize 1 	maxres   4.51176228214413e-01
+Iteration 17 	bsize 1 	maxres   1.63138937842310e-01
+Iteration 9 	bsize 1 	maxres   3.87564281790274e-01
+Iteration 18 	bsize 1 	maxres   1.56489509854242e-01
+Iteration 10 	bsize 1 	maxres   3.35010611459731e-01
+Iteration 19 	bsize 1 	maxres   1.51000838061474e-01
+Iteration 11 	bsize 1 	maxres   2.91617523409640e-01
+Iteration 20 	bsize 1 	maxres   1.46897631543104e-01
+Iteration 12 	bsize 1 	maxres   2.55512077072922e-01
+Iteration 21 	bsize 1 	maxres   1.40357340891764e-01
+Iteration 13 	bsize 1 	maxres   2.24146491094688e-01
+Iteration 22 	bsize 1 	maxres   1.33027110034346e-01
+Iteration 23 	bsize 1 	maxres   1.27087421560338e-01
+Iteration 14 	bsize 1 	maxres   1.99825909059365e-01
+Iteration 24 	bsize 1 	maxres   1.21884510515448e-01
+Iteration 15 	bsize 1 	maxres   1.82908639664664e-01
+Iteration 25 	bsize 1 	maxres   1.16155386593593e-01
+Iteration 16 	bsize 1 	maxres   1.72440171444126e-01
+Iteration 26 	bsize 1 	maxres   1.10454640043865e-01
+Iteration 17 	bsize 1 	maxres   1.63138937842310e-01
+Iteration 27 	bsize 1 	maxres   1.05560460668146e-01
+Iteration 18 	bsize 1 	maxres   1.56489509854242e-01
+Iteration 28 	bsize 1 	maxres   1.01260207086075e-01
+Iteration 19 	bsize 1 	maxres   1.51000838061474e-01
+Iteration 29 	bsize 1 	maxres   9.67776260533482e-02
+Iteration 20 	bsize 1 	maxres   1.46897631543104e-01
+Iteration 30 	bsize 1 	maxres   9.12697840092696e-02
+Iteration 21 	bsize 1 	maxres   1.40357340891764e-01
+Iteration 31 	bsize 1 	maxres   8.51106765007168e-02
+Iteration 32 	bsize 1 	maxres   7.89938822146234e-02
+Iteration 22 	bsize 1 	maxres   1.33027110034346e-01
+Iteration 33 	bsize 1 	maxres   7.31429735958813e-02
+Iteration 23 	bsize 1 	maxres   1.27087421560338e-01
+Iteration 34 	bsize 1 	maxres   6.72285907792892e-02
+Iteration 24 	bsize 1 	maxres   1.21884510515448e-01
+Iteration 35 	bsize 1 	maxres   6.17786529777393e-02
+Iteration 25 	bsize 1 	maxres   1.16155386593593e-01
+Iteration 36 	bsize 1 	maxres   5.72116647519404e-02
+Iteration 26 	bsize 1 	maxres   1.10454640043865e-01
+Iteration 37 	bsize 1 	maxres   5.35379230223250e-02
+Iteration 27 	bsize 1 	maxres   1.05560460668146e-01
+Iteration 38 	bsize 1 	maxres   5.11529583289609e-02
+Iteration 28 	bsize 1 	maxres   1.01260207086075e-01
+Iteration 39 	bsize 1 	maxres   4.90310082801469e-02
+Iteration 29 	bsize 1 	maxres   9.67776260533482e-02
+Iteration 40 	bsize 1 	maxres   4.65639834238124e-02
+Iteration 30 	bsize 1 	maxres   9.12697840092696e-02
+Iteration 41 	bsize 1 	maxres   4.42409919214245e-02
+Iteration 31 	bsize 1 	maxres   8.51106765007168e-02
+Iteration 42 	bsize 1 	maxres   4.23311397833312e-02
+Iteration 32 	bsize 1 	maxres   7.89938822146234e-02
+Iteration 43 	bsize 1 	maxres   4.01366968191414e-02
+Iteration 33 	bsize 1 	maxres   7.31429735958813e-02
+Iteration 44 	bsize 1 	maxres   3.72735823919413e-02
+Iteration 34 	bsize 1 	maxres   6.72285907792892e-02
+Iteration 35 	bsize 1 	maxres   6.17786529777393e-02
+Iteration 45 	bsize 1 	maxres   3.41145683434750e-02
+Iteration 46 	bsize 1 	maxres   3.07902894601954e-02
+Iteration 36 	bsize 1 	maxres   5.72116647519404e-02
+Iteration 37 	bsize 1 	maxres   5.35379230223250e-02
+Iteration 47 	bsize 1 	maxres   2.78393878937681e-02
+Iteration 48 	bsize 1 	maxres   2.51169177778459e-02
+Iteration 38 	bsize 1 	maxres   5.11529583289609e-02
+Iteration 39 	bsize 1 	maxres   4.90310082801469e-02
+Iteration 49 	bsize 1 	maxres   2.28529622101945e-02
+Iteration 40 	bsize 1 	maxres   4.65639834238124e-02
+Iteration 50 	bsize 1 	maxres   2.09211983576857e-02
+Iteration 41 	bsize 1 	maxres   4.42409919214245e-02
+Iteration 51 	bsize 1 	maxres   1.96185078040651e-02
+Iteration 52 	bsize 1 	maxres   1.84318378528351e-02
+Iteration 42 	bsize 1 	maxres   4.23311397833312e-02
+Iteration 53 	bsize 1 	maxres   1.75091523732523e-02
+Iteration 43 	bsize 1 	maxres   4.01366968191414e-02
+Iteration 54 	bsize 1 	maxres   1.68599951262014e-02
+Iteration 44 	bsize 1 	maxres   3.72735823919413e-02
+Iteration 55 	bsize 1 	maxres   1.61671613141090e-02
+Iteration 45 	bsize 1 	maxres   3.41145683434750e-02
+Iteration 56 	bsize 1 	maxres   1.52965050446129e-02
+Iteration 46 	bsize 1 	maxres   3.07902894601954e-02
+Iteration 57 	bsize 1 	maxres   1.44251883607557e-02
+Iteration 47 	bsize 1 	maxres   2.78393878937681e-02
+Iteration 58 	bsize 1 	maxres   1.36716106332830e-02
+Iteration 48 	bsize 1 	maxres   2.51169177778459e-02
+Iteration 59 	bsize 1 	maxres   1.29894641499080e-02
+Iteration 49 	bsize 1 	maxres   2.28529622101945e-02
+Iteration 60 	bsize 1 	maxres   1.22503987094028e-02
+Iteration 50 	bsize 1 	maxres   2.09211983576857e-02
+Iteration 61 	bsize 1 	maxres   1.13515561129131e-02
+Iteration 51 	bsize 1 	maxres   1.96185078040651e-02
+Iteration 52 	bsize 1 	maxres   1.84318378528351e-02
+Iteration 62 	bsize 1 	maxres   1.04247560996553e-02
+Iteration 53 	bsize 1 	maxres   1.75091523732523e-02
+Iteration 63 	bsize 1 	maxres   9.39285954951690e-03
+Iteration 54 	bsize 1 	maxres   1.68599951262014e-02
+Iteration 64 	bsize 1 	maxres   8.43523325119277e-03
+Iteration 55 	bsize 1 	maxres   1.61671613141090e-02
+Iteration 65 	bsize 1 	maxres   7.54418430541587e-03
+Iteration 56 	bsize 1 	maxres   1.52965050446129e-02
+Iteration 66 	bsize 1 	maxres   6.73693897489430e-03
+Iteration 57 	bsize 1 	maxres   1.44251883607557e-02
+Iteration 67 	bsize 1 	maxres   6.02939748632785e-03
+Iteration 58 	bsize 1 	maxres   1.36716106332830e-02
+Iteration 68 	bsize 1 	maxres   5.36945044886161e-03
+Iteration 59 	bsize 1 	maxres   1.29894641499080e-02
+Iteration 69 	bsize 1 	maxres   4.76525843040233e-03
+Iteration 60 	bsize 1 	maxres   1.22503987094028e-02
+Iteration 70 	bsize 1 	maxres   4.21039551019581e-03
+Iteration 61 	bsize 1 	maxres   1.13515561129131e-02
+Iteration 71 	bsize 1 	maxres   3.74368799506558e-03
+Iteration 62 	bsize 1 	maxres   1.04247560996553e-02
+Iteration 72 	bsize 1 	maxres   3.29509420471064e-03
+Iteration 63 	bsize 1 	maxres   9.39285954951690e-03
+Iteration 73 	bsize 1 	maxres   2.92323884576670e-03
+Iteration 64 	bsize 1 	maxres   8.43523325119277e-03
+Iteration 74 	bsize 1 	maxres   2.61720828368261e-03
+Iteration 65 	bsize 1 	maxres   7.54418430541587e-03
+Iteration 75 	bsize 1 	maxres   2.37651994513980e-03
+Iteration 66 	bsize 1 	maxres   6.73693897489430e-03
+Iteration 76 	bsize 1 	maxres   2.20150932963607e-03
+Iteration 67 	bsize 1 	maxres   6.02939748632785e-03
+Iteration 77 	bsize 1 	maxres   2.06965537846010e-03
+Iteration 68 	bsize 1 	maxres   5.36945044886161e-03
+Iteration 78 	bsize 1 	maxres   1.94598252651997e-03
+Iteration 69 	bsize 1 	maxres   4.76525843040233e-03
+Iteration 79 	bsize 1 	maxres   1.83380365882701e-03
+Iteration 70 	bsize 1 	maxres   4.21039551019581e-03
+Iteration 80 	bsize 1 	maxres   1.72221682977995e-03
+Iteration 71 	bsize 1 	maxres   3.74368799506558e-03
+Iteration 81 	bsize 1 	maxres   1.62114986879694e-03
+Iteration 72 	bsize 1 	maxres   3.29509420471064e-03
+Iteration 82 	bsize 1 	maxres   1.54454646034894e-03
+Iteration 73 	bsize 1 	maxres   2.92323884576670e-03
+Iteration 74 	bsize 1 	maxres   2.61720828368261e-03
+Iteration 83 	bsize 1 	maxres   1.47220957375386e-03
+Iteration 75 	bsize 1 	maxres   2.37651994513980e-03
+Iteration 84 	bsize 1 	maxres   1.37952978051990e-03
+Iteration 76 	bsize 1 	maxres   2.20150932963607e-03
+Iteration 85 	bsize 1 	maxres   1.26751242584814e-03
+Iteration 77 	bsize 1 	maxres   2.06965537846010e-03
+Iteration 86 	bsize 1 	maxres   1.16545020682898e-03
+Iteration 78 	bsize 1 	maxres   1.94598252651997e-03
+Iteration 87 	bsize 1 	maxres   1.07606031365606e-03
+Iteration 79 	bsize 1 	maxres   1.83380365882701e-03
+Iteration 88 	bsize 1 	maxres   9.89194251907788e-04
+Iteration 80 	bsize 1 	maxres   1.72221682977995e-03
+Iteration 89 	bsize 1 	maxres   9.11599980324712e-04
+Iteration 81 	bsize 1 	maxres   1.62114986879694e-03
+Iteration 90 	bsize 1 	maxres   8.31164026971046e-04
+Iteration 82 	bsize 1 	maxres   1.54454646034894e-03
+Iteration 91 	bsize 1 	maxres   7.63033907178022e-04
+Iteration 83 	bsize 1 	maxres   1.47220957375386e-03
+Iteration 92 	bsize 1 	maxres   7.13366815959818e-04
+Iteration 84 	bsize 1 	maxres   1.37952978051990e-03
+Iteration 93 	bsize 1 	maxres   6.75430649876193e-04
+Iteration 85 	bsize 1 	maxres   1.26751242584814e-03
+Iteration 94 	bsize 1 	maxres   6.58640490360976e-04
+Iteration 86 	bsize 1 	maxres   1.16545020682898e-03
+Iteration 95 	bsize 1 	maxres   6.56221327790633e-04
+Iteration 87 	bsize 1 	maxres   1.07606031365606e-03
+Iteration 96 	bsize 1 	maxres   6.44951484514827e-04
+Iteration 88 	bsize 1 	maxres   9.89194251907788e-04
+Iteration 97 	bsize 1 	maxres   6.14628296933284e-04
+Iteration 89 	bsize 1 	maxres   9.11599980324712e-04
+Iteration 98 	bsize 1 	maxres   5.61835290598210e-04
+Iteration 90 	bsize 1 	maxres   8.31164026971046e-04
+Iteration 99 	bsize 1 	maxres   5.09568788898158e-04
+Iteration 91 	bsize 1 	maxres   7.63033907178022e-04
+Iteration 100 	bsize 1 	maxres   4.57084440264369e-04
+
+Eigenvalue lambda   2.71688446192107e-02
+Residual   4.57084440264369e-04
+
+100 iterations
+=============================================
+Solve phase times:
+=============================================
+LOBPCG Solve:
+  wall clock time = 0.237322 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.234057 seconds
+  cpu MFLOPS      = 0.000000
+
+Solver:  ParGEMSLR-FlexGMRES
+HYPRE_FlexGMRESGetPrecond got good precond
+Iteration 92 	bsize 1 	maxres   7.13366815959818e-04
+Iteration 93 	bsize 1 	maxres   6.75430649876193e-04
+Iteration 94 	bsize 1 	maxres   6.58640490360976e-04
+Iteration 95 	bsize 1 	maxres   6.56221327790633e-04
+Iteration 96 	bsize 1 	maxres   6.44951484514827e-04
+Iteration 97 	bsize 1 	maxres   6.14628296933284e-04
+Iteration 98 	bsize 1 	maxres   5.61835290598210e-04
+Iteration 99 	bsize 1 	maxres   5.09568788898158e-04
+Iteration 100 	bsize 1 	maxres   4.57084440264369e-04
+
+Eigenvalue lambda   2.71688446192107e-02
+Residual   4.57084440264369e-04
+
+100 iterations
+=============================================
+Solve phase times:
+=============================================
+LOBPCG Solve:
+  wall clock time = 0.236118 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.222455 seconds
+  cpu MFLOPS      = 0.000000
+
+Solver:  ParGEMSLR-FlexGMRES
+HYPRE_FlexGMRESGetPrecond got good precond
+Warning: Single np, switch to global reordering. on MPI rank 0
+--------------------------------
+Setup Parallel GeMSLR
+	Inner Iteration ON. tol: 0.01; maxits: 5
+	Additive LU solve
+--------------------------------
+Level | Ncomp |   Total Size | Min B Size | Max B Size |          Nnz |    rk |        nnzLU |        nnzLR
+    0 |    16 |        32768 |      28183 |      28183 |       202247 |    50 | 1.812230e+05 | 4.585000e+05
+    1 |    16 |         4585 |       4425 |       4425 |        20581 |    50 | 1.982900e+04 | 1.600000e+04
+    2 |    16 |          160 |        157 |        157 |          401 |     3 | 3.870000e+02 | 1.800000e+01
+    3 |     1 |            3 |          3 |          3 |            3 |     0 | 3.000000e+00 | 0.000000e+00
+Fill level: ILU: 0.902389; Low-rank: 2.125672; Total: 3.028060
+=============================================
+Setup phase times:
+=============================================
+FlexGMRES Setup:
+  wall clock time = 2.022715 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 2.020043 seconds
+  cpu MFLOPS      = 0.000000
+
+L2 norm of b: 1.810193e+02
+Initial L2 norm of residual: 1.810193e+02
+=============================================
+
+Iters     resid.norm     conv.rate  rel.res.norm
+-----    ------------    ---------- ------------
+    1    1.732738e+02    0.957212   9.572117e-01
+    2    1.421364e+02    0.820299   7.852000e-01
+    3    1.097226e+02    0.771953   6.061377e-01
+    4    7.846279e+01    0.715101   4.334498e-01
+    5    5.548956e+01    0.707209   3.065394e-01
+    6    3.807966e+01    0.686249   2.103624e-01
+    7    2.353006e+01    0.617917   1.299865e-01
+Warning: Single np, switch to global reordering. on MPI rank 0
+--------------------------------
+Setup Parallel GeMSLR
+	Inner Iteration ON. tol: 0.01; maxits: 5
+	Additive LU solve
+--------------------------------
+Level | Ncomp |   Total Size | Min B Size | Max B Size |          Nnz |    rk |        nnzLU |        nnzLR
+    0 |    16 |        32768 |      28183 |      28183 |       202247 |    50 | 1.812230e+05 | 4.585000e+05
+    1 |    16 |         4585 |       4425 |       4425 |        20581 |    50 | 1.982900e+04 | 1.600000e+04
+    2 |    16 |          160 |        157 |        157 |          401 |     3 | 3.870000e+02 | 1.800000e+01
+    3 |     1 |            3 |          3 |          3 |            3 |     0 | 3.000000e+00 | 0.000000e+00
+Fill level: ILU: 0.902389; Low-rank: 2.125672; Total: 3.028060
+=============================================
+Setup phase times:
+=============================================
+FlexGMRES Setup:
+  wall clock time = 2.056728 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 2.006176 seconds
+  cpu MFLOPS      = 0.000000
+
+    8    1.198618e+01    0.509399   6.621493e-02
+L2 norm of b: 1.810193e+02
+Initial L2 norm of residual: 1.810193e+02
+=============================================
+
+Iters     resid.norm     conv.rate  rel.res.norm
+-----    ------------    ---------- ------------
+    1    1.732738e+02    0.957212   9.572117e-01
+    9    5.357732e+00    0.446992   2.959757e-02
+    2    1.421364e+02    0.820299   7.852000e-01
+   10    2.528323e+00    0.471902   1.396714e-02
+    3    1.097226e+02    0.771953   6.061377e-01
+   11    1.523483e+00    0.602567   8.416136e-03
+    4    7.846279e+01    0.715101   4.334498e-01
+   12    1.024051e+00    0.672177   5.657136e-03
+    5    5.548956e+01    0.707209   3.065394e-01
+   13    6.790737e-01    0.663125   3.751388e-03
+    6    3.807966e+01    0.686249   2.103624e-01
+   14    4.445283e-01    0.654610   2.455695e-03
+    7    2.353006e+01    0.617917   1.299865e-01
+   15    2.852456e-01    0.641682   1.575774e-03
+    8    1.198618e+01    0.509399   6.621493e-02
+   16    1.765474e-01    0.618931   9.752960e-04
+    9    5.357732e+00    0.446992   2.959757e-02
+   10    2.528323e+00    0.471902   1.396714e-02
+   17    1.036931e-01    0.587339   5.728290e-04
+   11    1.523483e+00    0.602567   8.416136e-03
+   18    6.169466e-02    0.594974   3.408181e-04
+   12    1.024051e+00    0.672177   5.657136e-03
+   19    3.733944e-02    0.605230   2.062732e-04
+   13    6.790737e-01    0.663125   3.751388e-03
+   20    2.198797e-02    0.588867   1.214675e-04
+   14    4.445283e-01    0.654610   2.455695e-03
+   21    1.238488e-02    0.563257   6.841743e-05
+   15    2.852456e-01    0.641682   1.575774e-03
+   22    6.955650e-03    0.561624   3.842490e-05
+   16    1.765474e-01    0.618931   9.752960e-04
+   23    4.188270e-03    0.602139   2.313714e-05
+   17    1.036931e-01    0.587339   5.728290e-04
+   18    6.169466e-02    0.594974   3.408181e-04
+   24    2.437387e-03    0.581956   1.346479e-05
+   19    3.733944e-02    0.605230   2.062732e-04
+   25    1.299259e-03    0.533054   7.177461e-06
+   20    2.198797e-02    0.588867   1.214675e-04
+   26    6.818990e-04    0.524837   3.766995e-06
+   21    1.238488e-02    0.563257   6.841743e-05
+   27    3.695829e-04    0.541991   2.041676e-06
+   22    6.955650e-03    0.561624   3.842490e-05
+   28    2.130693e-04    0.576513   1.177053e-06
+   23    4.188270e-03    0.602139   2.313714e-05
+   29    1.254792e-04    0.588913   6.931814e-07
+   24    2.437387e-03    0.581956   1.346479e-05
+   30    7.372673e-05    0.587561   4.072865e-07
+   25    1.299259e-03    0.533054   7.177461e-06
+   31    4.371332e-05    0.592910   2.414843e-07
+   26    6.818990e-04    0.524837   3.766995e-06
+   32    2.703807e-05    0.618531   1.493656e-07
+   27    3.695829e-04    0.541991   2.041676e-06
+   33    1.758689e-05    0.650449   9.715478e-08
+   28    2.130693e-04    0.576513   1.177053e-06
+   29    1.254792e-04    0.588913   6.931814e-07
+   34    1.179178e-05    0.670487   6.514099e-08
+   30    7.372673e-05    0.587561   4.072865e-07
+   35    7.832747e-06    0.664255   4.327022e-08
+   31    4.371332e-05    0.592910   2.414843e-07
+   36    4.843852e-06    0.618410   2.675875e-08
+   32    2.703807e-05    0.618531   1.493656e-07
+   37    2.726479e-06    0.562874   1.506181e-08
+   33    1.758689e-05    0.650449   9.715478e-08
+   38    1.461585e-06    0.536071   8.074193e-09
+
+
+Final L2 norm of residual: 1.461585e-06
+
+
+
+=============================================
+Solve phase times:
+=============================================
+FlexGMRES Solve:
+  wall clock time = 0.296990 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.296979 seconds
+  cpu MFLOPS      = 0.000000
+
+
+FlexGMRES Iterations = 38
+Final FlexGMRES Relative Residual Norm = 8.074194e-09
+
+   34    1.179178e-05    0.670487   6.514099e-08
+   35    7.832747e-06    0.664255   4.327022e-08
+   36    4.843852e-06    0.618410   2.675875e-08
+   37    2.726479e-06    0.562874   1.506181e-08
+   38    1.461585e-06    0.536071   8.074193e-09
+
+
+Final L2 norm of residual: 1.461585e-06
+
+
+
+=============================================
+Solve phase times:
+=============================================
+FlexGMRES Solve:
+  wall clock time = 0.301276 seconds
+  wall MFLOPS     = 0.000000
+  cpu clock time  = 0.301213 seconds
+  cpu MFLOPS      = 0.000000
+
+
+FlexGMRES Iterations = 38
+Final FlexGMRES Relative Residual Norm = 8.074194e-09
+

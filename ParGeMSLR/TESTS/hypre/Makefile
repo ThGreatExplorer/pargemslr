@@ -8,6 +8,9 @@ default:all
 include ../../makefile.in
 include ../../$(HYPRE_PATH)/config/Makefile.config
 
+$(info Hypre path is $(HYPRE_PATH))
+$(info Hypre build dir is  $(HYPRE_BUILD_DIR))
+
 LINK_CXX +=  -std=c++11
 CFLAGS += -I../../INC
 LIBPARGEMSLR = -L../../ -lpargemslr -L../../$(LAPACK_PATH) $(LIBLAPACK) -L../../$(METIS_PATH)/libparmetis -lparmetis -L../../$(METIS_PATH)/libmetis -lmetis
