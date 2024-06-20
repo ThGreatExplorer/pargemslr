@@ -5036,6 +5036,33 @@ main( hypre_int argc,
                                 (HYPRE_PtrToSolverFcn) HYPRE_EuclidSetup,
                                 pcg_precond);
          }
+         /*-----------------------------------------------------------
+         * ParGEMSLR LOBPCG option
+         *-----------------------------------------------------------*/
+         else if (solver_id == 83) {
+             /* use hypre_ILU preconditioning */
+            if (myid == 0) hypre_printf("Solver:  ParGEMSLR-FlexGMRES\n");
+
+            HYPRE_InitGemslr();
+
+            /* create precon */
+            HYPRE_GEMSLRCreate(&pcg_precond);
+
+            /* setup MGR-PCG solver */
+            /*HYPRE_FlexGMRESSetMaxIter(pcg_solver, mg_max_iter);
+            HYPRE_FlexGMRESSetPrecond(pcg_solver,
+                                    (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSolve,
+                                    (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSetup,
+                                    pcg_precond);*/
+            
+              /* setup LOB-PCG solver */
+            HYPRE_LOBPCGSetPrecond(pcg_solver,
+                                   (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSolve,
+                                   (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSetup,
+                                   pcg_precond);
+
+         }
+         
          else if (solver_id != NO_SOLVER )
          {
             if ( verbosity )
@@ -5248,6 +5275,14 @@ main( hypre_int argc,
          else if (solver_id == 43)
          {
             HYPRE_EuclidDestroy(pcg_precond);
+         }
+         /*-----------------------------------------------------------
+         * ParGEMSLR LOBPCG option
+         *-----------------------------------------------------------*/
+         else if(solver_id == 83)
+         {
+            HYPRE_GEMSLRDestroy(pcg_precond);
+            HYPRE_FinalizeGemslr();
          }
 
       }
@@ -5476,6 +5511,27 @@ main( hypre_int argc,
                                    (HYPRE_PtrToSolverFcn) HYPRE_EuclidSetup,
                                    pcg_precond);
          }
+         /*-----------------------------------------------------------
+         * ParGEMSLR LOBPCG option
+         *-----------------------------------------------------------*/
+         else if (solver_id == 83) 
+         {
+            /* use hypre_ILU preconditioning */
+            if (myid == 0) hypre_printf("Solver:  ParGEMSLR-FlexGMRES\n");
+
+            HYPRE_InitGemslr();
+
+            /* create precon */
+            HYPRE_GEMSLRCreate(&pcg_precond);
+
+            /* setup LOB-PCG solver */
+            HYPRE_LOBPCGSetPrecond(pcg_solver,
+                                   (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSolve,
+                                   (HYPRE_PtrToSolverFcn) HYPRE_GEMSLRSetup,
+                                   pcg_precond);
+
+         }
+         
          else if (solver_id != NO_SOLVER )
          {
             if ( verbosity )
@@ -5666,6 +5722,14 @@ main( hypre_int argc,
          else if (solver_id == 43)
          {
             HYPRE_EuclidDestroy(pcg_precond);
+         }
+         /*-----------------------------------------------------------
+         * ParGEMSLR LOBPCG option
+         *-----------------------------------------------------------*/
+         else if(solver_id == 83)
+         {
+            HYPRE_GEMSLRDestroy(pcg_precond);
+            HYPRE_FinalizeGemslr();
          }
 
          mv_MultiVectorDestroy( eigenvectors );

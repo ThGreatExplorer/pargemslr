@@ -19,6 +19,7 @@
 #include "_hypre_utilities.h"
 #include "HYPRE.h"
 #include "HYPRE_parcsr_mv.h"
+#include "seq_mv.h" // Include seq_mv.h
 
 #include "HYPRE_IJ_mv.h"
 #include "_hypre_IJ_mv.h"
@@ -2369,12 +2370,12 @@ main( hypre_int argc,
    {
       BuildParLaplacian9pt(argc, argv, build_matrix_arg_index, &parcsr_A);
    }
-   else if ( build_matrix_type == 4 )
+   /*else if ( build_matrix_type == 4 )
    {
       BuildParLaplacian27pt(argc, argv, build_matrix_arg_index, &parcsr_A);
 
-      hypre_CSRMatrixGpuSpMVAnalysis(hypre_ParCSRMatrixDiag(parcsr_A));
-   }
+      hypre_CSRMatrixSpMVAnalysisDevice(hypre_ParCSRMatrixDiag(parcsr_A));
+   }*/
    else if ( build_matrix_type == 5 )
    {
       BuildParDifConv(argc, argv, build_matrix_arg_index, &parcsr_A);
@@ -6645,8 +6646,8 @@ main( hypre_int argc,
          HYPRE_MGRSetMaxIter(pcg_precond, 1);
          HYPRE_MGRSetTol(pcg_precond, pc_tol);
 
-         HYPRE_MGRSetGlobalsmoothType(pcg_precond, mgr_gsmooth_type);
-         HYPRE_MGRSetMaxGlobalsmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
+         HYPRE_MGRSetGlobalSmoothType(pcg_precond, mgr_gsmooth_type);
+         HYPRE_MGRSetMaxGlobalSmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
 
          /* create AMG coarse grid solver */
 
@@ -7135,8 +7136,8 @@ main( hypre_int argc,
          HYPRE_MGRSetMaxIter(pcg_precond, 1);
          HYPRE_MGRSetTol(pcg_precond, pc_tol);
 
-         HYPRE_MGRSetGlobalsmoothType(pcg_precond, mgr_gsmooth_type);
-         HYPRE_MGRSetMaxGlobalsmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
+         HYPRE_MGRSetGlobalSmoothType(pcg_precond, mgr_gsmooth_type);
+         HYPRE_MGRSetMaxGlobalSmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
 
          /* create AMG coarse grid solver */
 
@@ -7495,8 +7496,8 @@ main( hypre_int argc,
          HYPRE_MGRSetMaxIter(pcg_precond, 1);
          HYPRE_MGRSetTol(pcg_precond, pc_tol);
 
-         HYPRE_MGRSetGlobalsmoothType(pcg_precond, mgr_gsmooth_type);
-         HYPRE_MGRSetMaxGlobalsmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
+         HYPRE_MGRSetGlobalSmoothType(pcg_precond, mgr_gsmooth_type);
+         HYPRE_MGRSetMaxGlobalSmoothIters( pcg_precond, mgr_num_gsmooth_sweeps );
 
          /* create AMG coarse grid solver */
 
@@ -7856,8 +7857,8 @@ main( hypre_int argc,
       HYPRE_MGRSetMaxIter(mgr_solver, max_iter);
       HYPRE_MGRSetTol(mgr_solver, tol);
 
-      HYPRE_MGRSetGlobalsmoothType(mgr_solver, mgr_gsmooth_type);
-      HYPRE_MGRSetMaxGlobalsmoothIters( mgr_solver, mgr_num_gsmooth_sweeps );
+      HYPRE_MGRSetGlobalSmoothType(mgr_solver, mgr_gsmooth_type);
+      HYPRE_MGRSetMaxGlobalSmoothIters( mgr_solver, mgr_num_gsmooth_sweeps );
 
       /* create AMG coarse grid solver */
 
@@ -10069,7 +10070,7 @@ BuildParCoordinates( HYPRE_Int            argc,
    if (nz < 2) { coorddim--; }
 
    if (coorddim > 0)
-      coordinates = GenerateCoordinates (hypre_MPI_COMM_WORLD,
+      coordinates = hypre_GenerateCoordinates (hypre_MPI_COMM_WORLD,
                                          nx, ny, nz, P, Q, R, p, q, r, coorddim);
    else
    {
