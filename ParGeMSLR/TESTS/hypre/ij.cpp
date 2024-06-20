@@ -6520,8 +6520,8 @@ main( hypre_int argc,
    /*-----------------------------------------------------------
     * Solve the system using FlexGMRES
     *-----------------------------------------------------------*/
-
-   if (solver_id == 60 || solver_id == 61 || solver_id == 72 || solver_id == 82 || solver_id == 83 || solver_id == 47)
+   /* Modified to add check that that ParGMRES is not used with LOBPCG*/
+   if (solver_id == 60 || solver_id == 61 || solver_id == 72 || solver_id == 82 || solver_id == 83 && !lobpcgFlag || solver_id == 47)
    {
       time_index = hypre_InitializeTiming("FlexGMRES Setup");
       hypre_BeginTiming(time_index);
