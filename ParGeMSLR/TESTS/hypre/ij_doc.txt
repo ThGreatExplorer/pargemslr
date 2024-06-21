@@ -265,6 +265,7 @@ LOBPCG options:
                             residuals history to res_hist.txt
 
 NOTE: in this test driver LOBPCG only works with solvers 1, 2, 8, 12, 14 and 43
+NOTE: added 83 as supported solver.
 
 default solver is 1
 
