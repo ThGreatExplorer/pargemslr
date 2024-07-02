@@ -2182,7 +2182,7 @@ main( hypre_int argc,
          hypre_printf("                            (i+1)-th iteration) to val_hist.txt and\n");
          hypre_printf("                            residuals history to res_hist.txt\n");
          hypre_printf("\nNOTE: in this test driver LOBPCG only works with solvers 1, 2, 8, 12, 14 and 43\n");
-         hypre_printf("NOTE: added 83 as supported solver.\n")
+         hypre_printf("NOTE: added 83 as supported solver.\n");
          hypre_printf("\ndefault solver is 1\n");
          hypre_printf("\n");
 
